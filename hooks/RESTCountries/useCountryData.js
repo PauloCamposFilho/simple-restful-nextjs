@@ -1,5 +1,5 @@
 import { useState } from "react";
-import fetchCountryData from "../../helpers/fetchCountryData";
+import { fetchCountryData, reorderCountryData } from "../../helpers/fetchCountryData";
 
 const useCountryData = (initialInputValue = '', initialResponseData = {}) => {
   const [inputValue, setInputValue] = useState('');
@@ -16,8 +16,7 @@ const useCountryData = (initialInputValue = '', initialResponseData = {}) => {
 
   const handleResponseData = async (countryName) => {
     const _responseData = await fetchCountryData(countryName);
-    console.log(_responseData);
-    setResponseData(_responseData);
+    setResponseData(reorderCountryData(_responseData));
   };
 
   return {

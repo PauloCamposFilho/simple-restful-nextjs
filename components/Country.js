@@ -1,11 +1,9 @@
 import styles from '../styles/Country.module.css';
 const Country = (props) => {
-  console.log(props);
   const countryNames = [];
   for (const language in props.name.nativeName) {
     countryNames.push(`${language}: ${props.name.nativeName[language].common}`);
   }
-  console.log(countryNames);
   return (
     <div className={styles.country}>
       <div className={styles.flag_container}>

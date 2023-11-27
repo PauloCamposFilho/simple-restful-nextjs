@@ -10,4 +10,12 @@ const fetchCountryData = async (countryName) => {
   }
 };
 
-export default fetchCountryData;
+const reorderCountryData = (countryData) => {
+  console.log(countryData);
+  if (countryData.length <= 1) {
+    return countryData;
+  }
+  return countryData.sort((a,b) => b.population - a.population);
+};
+
+export { fetchCountryData, reorderCountryData }
