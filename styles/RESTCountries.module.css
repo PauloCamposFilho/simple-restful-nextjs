@@ -1,6 +1,6 @@
 button.search {
   margin-left: 20px;
-  padding: 3px;  
+  padding: 3px;
 }
 button.reset {
   padding: 3px;
@@ -9,8 +9,8 @@ button.reset {
 }
 .container {
   display: flex;
-  max-width: 80%;
+  max-width: 90%;
   margin-top: 40px;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 }
