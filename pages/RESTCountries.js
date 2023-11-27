@@ -21,9 +21,6 @@ export default function RESTCountries() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1 className={styles.title}>RESTCountries</h1>
-      {inputValue != '' &&
-        <p>Debug: {inputValue}</p>
-      }
       <input type="text" placeholder="Enter Country Name" value={inputValue} onChange={handleInputChange} />
       <button onClick={() => {
         handleResponseData(inputValue);
