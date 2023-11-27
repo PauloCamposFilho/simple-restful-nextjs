@@ -13,13 +13,10 @@ const useCountryData = (initialInputValue = '') => {
     setInputValue(initialInputValue);
   };
 
-  const getResponseData = (countryName) => {
-    fetchCountryData(countryName);
-    handleResponseData(responseData);
-  };
-
-  const handleResponseData = (responseData) => {
-    setResponseData(responseData);
+  const handleResponseData = async (countryName) => {
+    const _responseData = await fetchCountryData(countryName);
+    console.log(_responseData);
+    setResponseData(_responseData);
   };
 
   return {
@@ -27,8 +24,7 @@ const useCountryData = (initialInputValue = '') => {
     responseData,
     handleInputChange,
     resetInputValue,
-    getResponseData,
-    handleResponseData
+    handleResponseData,
   };
 };
 
