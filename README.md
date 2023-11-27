@@ -23,3 +23,5 @@ This is a simple app that makes requests to the RESTCountries API and displays t
     - Small flag, name, region, population
   - Add possible filters so user can search not only by name
     - Region, Sub-region, Spoken Languages, Currency...
+
+- STYLE THE APP. 
