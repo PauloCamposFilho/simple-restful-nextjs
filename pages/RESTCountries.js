@@ -25,7 +25,9 @@ export default function RESTCountries() {
         <p>Debug: {inputValue}</p>
       }
       <input type="text" placeholder="Enter Country Name" value={inputValue} onChange={handleInputChange} />
-      <button className={RESTCountriesStyles.search} type="button">Get info!</button>
+      <button onClick={() => {
+        getResponseData(inputValue);
+      }} className={RESTCountriesStyles.search} type="button">Get info!</button>
     </div>
   );
 }
