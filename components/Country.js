@@ -1,3 +1,4 @@
+import styles from '../styles/Country.module.css';
 const Country = (props) => {
   console.log(props);
   const countryNames = [];
@@ -6,7 +7,8 @@ const Country = (props) => {
   }
   console.log(countryNames);
   return (
-    <div className="">
+    <div className={styles.country}>
+      <img className={styles.flag} src={props.flags.svg} alt={`${props.name.common} flag`} />
       <h2>{props.name.common}</h2>
       <h3>Official Name: {props.name.official}</h3>
       <div>

@@ -2,7 +2,6 @@ import Head from "next/head";
 import styles from '../styles/Home.module.css';
 import RESTCountriesStyles from '../styles/RESTCountries.module.css';
 import useCountryData from "../hooks/RESTCountries/useCountryData";
-import { useEffect } from "react";
 import Country from "../components/Country";
 
 export default function RESTCountries() {
@@ -32,7 +31,7 @@ export default function RESTCountries() {
       }} className={RESTCountriesStyles.search} type="button">Get info!</button>
       <button className={RESTCountriesStyles.reset} onClick={resetInputValue}>RESET</button>
       {responseData.length > 0 &&
-        <div className="country-data__container">
+        <div className={RESTCountriesStyles.container}>
           {responseData.map((country) => {
             return <Country key={country.cca3} {...country} />
           })}

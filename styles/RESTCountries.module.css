@@ -7,3 +7,10 @@ button.reset {
   margin-left: 20px;
   color: rgb(209, 66, 66);
 }
+.container {
+  display: flex;
+  max-width: 80%;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

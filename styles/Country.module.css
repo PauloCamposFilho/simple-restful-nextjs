@@ -1,0 +1,9 @@
+.country {
+  width: 40%;
+  padding: 50px;
+  border: 1px solid #e7e7e7;
+  border-radius: 15%;
+}
+.flag {
+  max-width: 50%;
+}
