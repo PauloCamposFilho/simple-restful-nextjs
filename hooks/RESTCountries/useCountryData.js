@@ -1,9 +1,9 @@
 import { useState } from "react";
 import fetchCountryData from "../../helpers/fetchCountryData";
 
-const useCountryData = (initialInputValue = '') => {
+const useCountryData = (initialInputValue = '', initialResponseData = {}) => {
   const [inputValue, setInputValue] = useState('');
-  const [responseData, setResponseData] = useState({});
+  const [responseData, setResponseData] = useState(initialResponseData);
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -11,6 +11,7 @@ const useCountryData = (initialInputValue = '') => {
 
   const resetInputValue = () => {
     setInputValue(initialInputValue);
+    setResponseData(initialResponseData);
   };
 
   const handleResponseData = async (countryName) => {

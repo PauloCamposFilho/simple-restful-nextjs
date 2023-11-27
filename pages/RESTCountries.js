@@ -30,8 +30,9 @@ export default function RESTCountries() {
         handleResponseData(inputValue);
         resetInputValue();
       }} className={RESTCountriesStyles.search} type="button">Get info!</button>
+      <button className={RESTCountriesStyles.reset} onClick={resetInputValue}>RESET</button>
       {responseData.length > 0 &&
-        <div className="country-data__info">
+        <div className="country-data__container">
           {responseData.map((country) => {
             return <Country key={country.cca3} {...country} />
           })}
