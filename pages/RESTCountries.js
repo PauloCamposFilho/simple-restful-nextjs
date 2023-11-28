@@ -4,7 +4,6 @@ import RESTCountriesStyles from '../styles/RESTCountries.module.css';
 import useCountryData from "../hooks/RESTCountries/useCountryData";
 import CountryList from "../components/CountryList";
 import ErrorDialog from "../components/ErrorDialog";
-import { ErrorProvider, useError } from "../contexts/ErrorContext";
 
 export default function RESTCountries() {
   const {
