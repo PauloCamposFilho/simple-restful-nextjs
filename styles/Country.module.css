@@ -22,13 +22,14 @@ div.stats {
 span.stats {
   display: block;
 }
-.osm_container {
+.map_app_container {
   margin-top: 10px;
 }
-img.osm_icon {
-  max-width: 40px;
+img.map_app_icon {
+  height: 40px;
+  width: 40px;
 }
-a.osm_info {
+a.map_app_info {
   display: flex;
   align-items: center;
   font-size: 0.8rem;

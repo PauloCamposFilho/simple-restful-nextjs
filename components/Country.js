@@ -16,8 +16,11 @@ const Country = (props) => {
         <span className={styles.stats}>Sub-region: {props.subregion}</span>
         <span className={styles.stats}>Languages: {languages}</span>
       </div>
-      <div className={styles.osm_container}>
-        <a className={styles.osm_info} href={props.maps.openStreetMaps} target='_blank'><img className={styles.osm_icon} src='/osm.svg' /><span>View in OpenStreetMaps</span></a>
+      <div className={styles.map_app_container}>
+        <a className={styles.map_app_info} href={props.maps.openStreetMaps} target='_blank'><img className={styles.map_app_icon} src='/osm.svg' /><span>View in OpenStreetMaps</span></a>
+      </div>
+      <div className={styles.map_app_container}>
+        <a className={styles.map_app_info} href={props.maps.googleMaps} target='_blank'><img className={styles.map_app_icon} src='/gmaps.svg' /><span>View in GoogleMaps</span></a>
       </div>
     </div>
   );
