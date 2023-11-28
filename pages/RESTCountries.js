@@ -5,6 +5,7 @@ import useCountryData from "../hooks/RESTCountries/useCountryData";
 import CountryList from "../components/CountryList";
 import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from "@mui/material";
 import { Button } from "@mui/material";
+import ErrorDialog from "../components/ErrorDialog";
 export default function RESTCountries() {
   const {
     inputValue,
@@ -40,16 +41,7 @@ export default function RESTCountries() {
         type="button">Get info!</button>
       <button className={RESTCountriesStyles.reset} onClick={resetInputValue}>RESET</button>
       {responseData?.length > 0 && <CountryList countries={responseData} />}
-      {errorMessage && <Dialog open={errorDialogOpen} onClose={closeErrorDialog}>
-        <DialogTitle>Error</DialogTitle>
-        <DialogContent>
-          <DialogContentText>{errorMessage}</DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={closeErrorDialog}>OK</Button>
-        </DialogActions>
-      </Dialog>
-      }
+      {errorMessage && <ErrorDialog open={errorDialogOpen} message={errorMessage} onClose={closeErrorDialog} />}
     </div>
   );
 }
