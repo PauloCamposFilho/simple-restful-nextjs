@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { fetchCountryData, reorderCountryData } from "../../helpers/fetchCountryData";
-import { useError } from "../../contexts/ErrorContext";
+import { useDialog } from "../../contexts/DialogContext";
 
 const useCountryData = (initialInputValue = '', initialResponseData = {}) => {
   const [inputValue, setInputValue] = useState('');
   const [responseData, setResponseData] = useState(initialResponseData);
-  const { showError } = useError();
+  const { showDialog } = useDialog();
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -24,7 +24,7 @@ const useCountryData = (initialInputValue = '', initialResponseData = {}) => {
       }
       setResponseData(reorderCountryData(_responseData));
     } catch (error) {
-      showError(error.message);
+      showDialog("Error", error.message);
     }
   };
 

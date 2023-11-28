@@ -1,0 +1,36 @@
+.country {
+  border-radius: 15%;
+  display: flex;
+  flex-direction: column;
+}
+.flag_container {
+  display: flex;
+  justify-content: space-around;
+}
+.flag {
+  max-height: 120px;
+}
+h2.name {
+  margin-bottom: unset;
+}
+h3.official_name {
+  margin-top: unset;
+}
+div.stats {
+  font-size: 0.9rem;
+}
+span.stats {
+  display: block;
+}
+.map_app_container {
+  margin-top: 10px;
+}
+img.map_app_icon {
+  height: 40px;
+  width: 40px;
+}
+a.map_app_info {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+}

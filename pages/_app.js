@@ -1,11 +1,11 @@
-import { ErrorProvider } from '../contexts/ErrorContext'
+import { DialogProvider } from '../contexts/DialogContext'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   return (
-  <ErrorProvider>
+  <DialogProvider>
     <Component {...pageProps} />
-  </ErrorProvider>
+  </DialogProvider>
   );
 }
 
