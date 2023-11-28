@@ -3,9 +3,9 @@ import styles from '../styles/Home.module.css';
 import RESTCountriesStyles from '../styles/RESTCountries.module.css';
 import useCountryData from "../hooks/RESTCountries/useCountryData";
 import CountryList from "../components/CountryList";
-import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from "@mui/material";
-import { Button } from "@mui/material";
 import ErrorDialog from "../components/ErrorDialog";
+import { ErrorProvider, useError } from "../contexts/ErrorContext";
+
 export default function RESTCountries() {
   const {
     inputValue,
@@ -13,9 +13,6 @@ export default function RESTCountries() {
     handleInputChange,
     resetInputValue,
     handleResponseData,
-    errorDialogOpen,
-    errorMessage,
-    closeErrorDialog
   } = useCountryData();
 
   return (
@@ -41,7 +38,7 @@ export default function RESTCountries() {
         type="button">Get info!</button>
       <button className={RESTCountriesStyles.reset} onClick={resetInputValue}>RESET</button>
       {responseData?.length > 0 && <CountryList countries={responseData} />}
-      {errorMessage && <ErrorDialog open={errorDialogOpen} message={errorMessage} onClose={closeErrorDialog} />}
+      <ErrorDialog />
     </div>
   );
 }

@@ -1,11 +1,6 @@
 import { useState } from "react";
 import { fetchCountryData, reorderCountryData } from "../../helpers/fetchCountryData";
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
+import { useError } from "../../contexts/ErrorContext";
 
 const useCountryData = (
   initialInputValue = '',
@@ -15,8 +10,9 @@ const useCountryData = (
 ) => {
   const [inputValue, setInputValue] = useState('');
   const [responseData, setResponseData] = useState(initialResponseData);
-  const [errorDialogOpen, setErrorDialogOpen] = useState(initialErrorDialogState);
-  const [errorMessage, setErrorMessage] = useState(initialErrorMessage);
+  // const [errorDialogOpen, setErrorDialogOpen] = useState(initialErrorDialogState);
+  // const [errorMessage, setErrorMessage] = useState(initialErrorMessage);
+  const { showError } = useError();
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -30,24 +26,25 @@ const useCountryData = (
   const handleResponseData = async (countryName) => {
     try {
       const _responseData = await fetchCountryData(countryName);
+      console.log("_responseData", _responseData); // Check if _responseData has the expected structure
       if (_responseData.status === "error") {
         throw new Error(`Error fetching country data: ${_responseData.message}`);
       }
       setResponseData(reorderCountryData(_responseData));
     } catch (error) {
-      openErrorDialog(error.message);
+      showError(error.message);
     }
   };
 
-  const openErrorDialog = (message) => {
-    setErrorMessage(message);
-    setErrorDialogOpen(true);
-  };
+  // const openErrorDialog = (message) => {
+  //   setErrorMessage(message);
+  //   setErrorDialogOpen(true);
+  // };
 
-  const closeErrorDialog = () => {
-    setErrorMessage(initialErrorMessage);
-    setErrorDialogOpen(initialErrorDialogState);
-  };
+  // const closeErrorDialog = () => {
+  //   setErrorMessage(initialErrorMessage);
+  //   setErrorDialogOpen(initialErrorDialogState);
+  // };
 
   return {
     inputValue,
@@ -55,10 +52,10 @@ const useCountryData = (
     handleInputChange,
     resetInputValue,
     handleResponseData,
-    errorDialogOpen,
-    errorMessage,
-    openErrorDialog,
-    closeErrorDialog
+    // errorDialogOpen,
+    // errorMessage,
+    // openErrorDialog,
+    // closeErrorDialog
   };
 };
 

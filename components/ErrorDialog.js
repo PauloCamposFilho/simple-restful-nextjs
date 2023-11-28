@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@mui/material";
+import { useError } from "../contexts/ErrorContext";
 
-const ErrorDialog = ({ open, message, onClose }) => {
+const ErrorDialog = () => {
+  const { error, hideError } = useError();
+  if (!error) return null;
+
   return (
-    <Dialog open={open} onClose={onClose}>
+    <Dialog open={true} onClose={hideError}>
       <DialogTitle>Error</DialogTitle>
       <DialogContent>
-        <DialogContentText>{message}</DialogContentText>
+        <DialogContentText>{error}</DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={onClose}>OK</Button>
+        <Button onClick={hideError}>OK</Button>
       </DialogActions>
     </Dialog>
-  );  
+  );
 };
 
 export default ErrorDialog;
