@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.css';
 import RESTCountriesStyles from '../styles/RESTCountries.module.css';
 import useCountryData from "../hooks/RESTCountries/useCountryData";
 import CountryList from "../components/CountryList";
-import ErrorDialog from "../components/ErrorDialog";
+import DialogMessage from "../components/DialogMessage";
 
 export default function RESTCountries() {
   const {
@@ -37,7 +37,7 @@ export default function RESTCountries() {
         type="button">Get info!</button>
       <button className={RESTCountriesStyles.reset} onClick={resetInputValue}>RESET</button>
       {responseData?.length > 0 && <CountryList countries={responseData} />}
-      <ErrorDialog />
+      <DialogMessage />
     </div>
   );
 }
