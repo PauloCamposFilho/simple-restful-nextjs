@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css';
 import RESTCountriesStyles from '../styles/RESTCountries.module.css';
 import useCountryData from "../hooks/RESTCountries/useCountryData";
 import Country from "../components/Country";
+import CountryList from "../components/CountryList";
 
 export default function RESTCountries() {
   const {
@@ -21,19 +22,21 @@ export default function RESTCountries() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1 className={styles.title}>RESTCountries</h1>
-      <input type="text" placeholder="Enter Country Name" value={inputValue} onChange={handleInputChange} />
-      <button onClick={() => {
-        handleResponseData(inputValue);
-        resetInputValue();
-      }} className={RESTCountriesStyles.search} type="button">Get info!</button>
+      <input
+        type="text"
+        placeholder="Enter Country Name"
+        value={inputValue}
+        onChange={handleInputChange}
+      />
+      <button
+        onClick={() => {
+          handleResponseData(inputValue);
+          resetInputValue();
+        }}
+        className={RESTCountriesStyles.search}
+        type="button">Get info!</button>
       <button className={RESTCountriesStyles.reset} onClick={resetInputValue}>RESET</button>
-      {responseData.length > 0 &&
-        <div className={RESTCountriesStyles.container}>
-          {responseData.map((country) => {
-            return <Country key={country.cca3} {...country} />
-          })}
-        </div>
-      }
+      {responseData.length > 0 && <CountryList countries={responseData} />}
     </div>
   );
 }
