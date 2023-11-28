@@ -7,7 +7,7 @@ const DialogMessage = () => {
   if (!message || !label) return null;
 
   return (
-    <Dialog open={true} onClose={hideDialog}>
+    <Dialog open={true} onClose={hideDialog} fullWidth={true} maxWidth="sm">
       <DialogTitle>{label}</DialogTitle>      
       <DialogContent>
         <DialogContentText>{message}</DialogContentText>
