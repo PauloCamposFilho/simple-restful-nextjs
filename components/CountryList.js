@@ -1,4 +1,4 @@
-import Country from "./Country";
+import CountryItem from "./CountryItem";
 import RESTCountriesStyles from '../styles/CountryList.module.css';
 
 const CountryList = ({ countries }) => {
@@ -6,7 +6,7 @@ const CountryList = ({ countries }) => {
     <div className={RESTCountriesStyles.container_wrapper}>
       <div className={RESTCountriesStyles.container}>
         {countries.map((country) => {
-          return <Country key={country.cca3} {...country} />
+          return <CountryItem key={country.cca3} {...country} />
         })}
       </div>
     </div>

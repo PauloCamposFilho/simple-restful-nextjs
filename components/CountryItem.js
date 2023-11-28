@@ -21,4 +21,4 @@ const CountryItem = (props) => {
   );
 };
 
-export default Country;
+export default CountryItem;
