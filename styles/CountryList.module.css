@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  justify-content: start;  
+  flex-wrap: wrap;
+}
+.container_wrapper {
+  display: block;
+  margin: auto auto;
+}
