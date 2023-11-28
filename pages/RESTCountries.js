@@ -2,7 +2,6 @@ import Head from "next/head";
 import styles from '../styles/Home.module.css';
 import RESTCountriesStyles from '../styles/RESTCountries.module.css';
 import useCountryData from "../hooks/RESTCountries/useCountryData";
-import Country from "../components/Country";
 import CountryList from "../components/CountryList";
 
 export default function RESTCountries() {
