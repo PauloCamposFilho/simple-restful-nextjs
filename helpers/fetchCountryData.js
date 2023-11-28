@@ -1,10 +1,11 @@
-import axios from '../utils/axios';
+import { baseInstance, nameInstance } from "../utils/axios";
 
 const fetchCountryData = async (countryName) => {
   try {
-    const responseData = await axios.get(`${countryName}`);
-    console.log(responseData.data);
-    return responseData.data;
+    if (!countryName) {
+      return (await baseInstance.get()).data;
+    }
+    return (await nameInstance.get(`${countryName}`)).data;
   } catch (error) {
     return { status: "error", message: error };
   }
