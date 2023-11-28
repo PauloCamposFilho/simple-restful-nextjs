@@ -12,5 +12,5 @@ button.reset {
   max-width: 90%;
   margin-top: 40px;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }

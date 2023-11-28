@@ -1,9 +1,19 @@
 .container {
   display: flex;
-  justify-content: start;  
+  justify-content: center;
   flex-wrap: wrap;
 }
 .container_wrapper {
-  display: block;
-  margin: auto auto;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+.container_wrapper table {
+  text-align: left;
+}
+.container_wrapper table thead th, .container_wrapper table tbody td  {
+  padding: 10px;
+}
+.container_wrapper table tbody tr {
+  cursor: pointer;
 }
