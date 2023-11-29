@@ -32,7 +32,7 @@ export default function Home() {
           </a> */}
           <Link target='_blank' className={styles.card} href='/RESTCountries'>
             <h2>RESTCountries</h2>
-            <p>Check-out this basic NextJS app. It's really simple. But it works!</p>
+            <p>Check-out this basic NextJS app. It is really simple. But it works!</p>
           </Link>
 
           <Link target='_blank' href="https://nextjs.org/docs" className={styles.card}>
