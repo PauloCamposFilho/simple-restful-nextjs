@@ -13,7 +13,7 @@ const CountryItem = (props) => {
 
   return (
     <TableRow onClick={handleCountryClick} sx={{ '&:hover': { backgroundColor: 'rgba(255, 255, 255, 0.1)' } }}>
-      <TableCell><Image className={styles.flag} src={props.flags.svg} alt={`${props.name.common} flag. ${props.name.alt}`} /></TableCell>
+      <TableCell><img className={styles.flag} src={props.flags.svg} alt={`${props.name.common} flag. ${props.name.alt}`} /></TableCell>
       <TableCell sx={{ color: 'white' }}>{props.name.common}</TableCell>
       <TableCell sx={{ color: 'white' }}>{props.cca3}</TableCell>
       <TableCell sx={{ color: 'white' }}>{props.population.toLocaleString()}</TableCell>
