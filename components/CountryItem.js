@@ -21,7 +21,7 @@ const CountryItem = (props) => {
       </TableCell>
       <TableCell>{props.name.common}</TableCell>
       <TableCell>{props.cca3}</TableCell>
-      <TableCell>{props.population.toLocateString()}</TableCell>
+      <TableCell>{props.population.toLocaleString()}</TableCell>
     </TableRow>
   );
 };
